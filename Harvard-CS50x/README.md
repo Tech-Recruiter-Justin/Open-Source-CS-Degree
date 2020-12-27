@@ -43,6 +43,11 @@ int main(void)
 
 - Converts source code to machine code (binary instructions that the computer understands)
 
+1. Preprocessing (# in our code to link libraries)
+2. Compiling (from C to assembly)
+3. Assembling (from assembly code to binary)
+4. Linking (content of already compiled libraries are actually combined)
+
 ```bash
 # generates an output file named a.out from hello.c
 $ clang hello.c
@@ -192,3 +197,80 @@ int main(void)
 - Overflow happens when we don't have enough memory (bits)/ RAM to store all possible values
 - Integer overflow is when a number gets so big that it runs out of bits and "rolls over", eventually becoming 0
 - Y2K happened as programs used to store year with 2 digits only, same concept applies
+
+
+
+## Week 2 - Arrays
+
+### Data Types
+
+- bool 1 byte
+- char 1 byte
+- int 4 bytes
+- float 4 bytes
+- long 8 bytes
+- double 8 bytes
+- string ? bytes
+
+### Arrays
+
+```c
+// declares an array with 3 integers, index starts at 0
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Scores
+    int scores[3];
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 33;
+
+    // Print average
+    printf("Average: %i\n", (scores[0] + scores[1] + scores[2]) / 3);
+}
+```
+
+### Strings
+
+- Strings are actually just arrays of characters
+
+![grid with H labeled s[0], I labeled s[1], ! labeled s[2], \0 labeled s[3], each of which takes up one box, and many empty boxes following](memory_with_string.png)
+
+### Command-line Arguments
+
+- The default return value for a main function is 0, we can change it using `return` exit code
+
+
+
+## Week 3 - Algorithms
+
+### Searching
+
+- **Linear search** - move in a line when the array is not sorted
+
+```pseudocode
+For i from 0 to n-1
+	If i'th element is 50
+		Return true
+Return false
+```
+
+- **Binary search** - divide our problem in two step
+
+```pseudocode
+If no item
+	Return false
+If miffle item is 50
+	Return true
+Else if 50 < middle item
+	Search left half
+Else if 50 > middle item
+	Search right half
+```
+
+### Big O
+
+![chart with: "size of problem" as x–axis; "time to solve" as y–axis; red, steep straight line from origin to top of graph labeled "n"; yellow, less steep straight line from origin to top of graph labeled "n/2"; green, curved line that gets less and less steep from origin to right of graph labeled "log_2 n"](running_time.png)
+
