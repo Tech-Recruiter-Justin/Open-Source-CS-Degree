@@ -12,7 +12,7 @@
 ### Representing Data
 
 - Unicode uses decimal numbers to represent characters, symbols, emojis etc.
-  - The computer then converts the decimal unicode to binary numbers
+	- The computer then converts the decimal unicode to binary numbers
 
 ### Algorithms
 
@@ -84,32 +84,32 @@ make string
 ### Types, Formats, Operators
 
 - There are other types we can use for our variables
-  - `bool`, a Boolean expression of either `true` or `false`
-  - `char`, a single character like `a` or `2`
-  - `double`, a floating-point value with even more digits
-  - `float`, a floating-point value, or real number with a decimal value
-  - `int`, integers up to a certain size, or number of bits
-  - `long`, integers with more bits, so they can count higher
-  - `string`, a string of characters
+	- `bool`, a Boolean expression of either `true` or `false`
+	- `char`, a single character like `a` or `2`
+	- `double`, a floating-point value with even more digits
+	- `float`, a floating-point value, or real number with a decimal value
+	- `int`, integers up to a certain size, or number of bits
+	- `long`, integers with more bits, so they can count higher
+	- `string`, a string of characters
 - And the CS50 library has corresponding functions to get input of various types:
-  - `get_char`
-  - `get_double`
-  - `get_float`
-  - `get_int`
-  - `get_long`
-  - `get_string`
+	- `get_char`
+	- `get_double`
+	- `get_float`
+	- `get_int`
+	- `get_long`
+	- `get_string`
 - For `printf` there are different placeholders for each type:
-  - `%c` for chars
-  - `%f` for floats, doubles
-  - `%i` for ints
-  - `%li` for longs
-  - `%s` for strings
+	- `%c` for chars
+	- `%f` for floats, doubles
+	- `%i` for ints
+	- `%li` for longs
+	- `%s` for strings
 - And there are some mathematical operators we can use:
-  - `+` for addition
-  - `-` for subtraction
-  - `*` for multiplication
-  - `/` for division
-  - `%` for remainder
+	- `+` for addition
+	- `-` for subtraction
+	- `*` for multiplication
+	- `/` for division
+	- `%` for remainder
 
 ### Syntaxes
 
@@ -274,3 +274,119 @@ Else if 50 > middle item
 
 ![chart with: "size of problem" as x–axis; "time to solve" as y–axis; red, steep straight line from origin to top of graph labeled "n"; yellow, less steep straight line from origin to top of graph labeled "n/2"; green, curved line that gets less and less steep from origin to right of graph labeled "log_2 n"](running_time.png)
 
+- To describe run time:
+	- Big O - worst case scenarios 
+	- Big Ω, - best case scenarios
+- Is it better to have a nice Big O or Big Ω?
+	- Big O as we tend to focus on limiting the worst case/ average cases
+	- Best cases scenarios are often just corner cases
+
+### Linear Search
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // An array of numbers
+    int numbers[] = {4, 8, 15, 16, 23, 42};
+
+    // Search for 50
+    for (int i = 0; i < 6; i++)
+    {
+        if (numbers[i] == 50)
+        {
+            printf("Found\n");
+            return 0;
+        }
+    }
+    printf("Not found\n");
+    return 1;
+}
+```
+
+- Use `strcmp` in string.h to find strings
+
+### Structs
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    string name;
+    string number;
+}
+person;
+
+int main(void)
+{
+  	person people[4];
+  
+    people[0].name = "EMMA";
+    people[0].number = "617–555–0100";
+
+    people[1].name = "RODRIGO";
+    people[1].number = "617–555–0101";
+
+    people[2].name = "BRIAN";
+    people[2].number = "617–555–0102";
+
+    people[3].name = "DAVID";
+    people[3].number = "617–555–0103";
+  	people
+      
+    // Search for EMMA
+    for (int i = 0; i < 4; i++)
+    {
+        if (strcmp(people[i].name, "EMMA") == 0)
+        {
+            printf("Found %s\n", people[i].number);
+            return 0;
+        }
+    }
+    printf("Not found\n");
+    return 1;      
+}
+```
+
+### Sorting
+
+#### Big O
+
+- O(n2)
+	- bubble sort, selection sort
+- O(n log n)
+	- merge sort
+- O(n)
+	- linear search
+- O(log n)
+	- binary search
+- *O*(1)
+
+#### Big Ω
+
+- Ω(n2)
+	- selection sort
+- Ω(n log n)
+	- merge sort
+- Ω(n)
+	- bubble sort
+- Ω(log *n*)
+- Ω(1)
+	- linear search, binary search
+
+#### Θ Theta
+
+- Θ(n2)
+	- selection sort
+- Θ(n log n)
+	- merge sort
+
+### Recursion
+
+- Function that calls itself
+- Requires an exit that stops it from happening forever
