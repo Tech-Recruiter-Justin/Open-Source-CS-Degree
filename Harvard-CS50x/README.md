@@ -390,3 +390,11 @@ int main(void)
 
 - Function that calls itself
 - Requires an exit that stops it from happening forever
+
+
+
+## Week 4 - Memory
+
+### Hexadecimal
+
+- `0x` doesn't mean anything mathematically, but simply to say this is hexadecimal
