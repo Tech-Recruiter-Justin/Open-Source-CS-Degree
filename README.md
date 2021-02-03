@@ -9,7 +9,7 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ## Computer Science Basics
 
-### Harvard - CS50x - Week 5 of 12
+### Harvard - CS50x - Week 5 out of 12
 
 ### UC San Diego - Mathematical Thinking in Computer Science - Yet to Start...
 
@@ -17,7 +17,7 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ## Programming
 
-### Duke - Java Programming: Solving Problems with Software - Week 1 of 4
+### Duke - Java Programming: Solving Problems with Software - Week 1 out of 4
 
 
 
