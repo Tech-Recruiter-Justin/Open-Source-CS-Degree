@@ -19,3 +19,8 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ### Duke - Java Programming: Solving Problems with Software - Week 1
 
+
+
+## Other Self-Taught Material
+### CodeCademy - Learn Java - Object-Oriented Java
+### Udemy - The Web Developer Bootcamp 2021 - YelpCamp
