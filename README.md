@@ -22,5 +22,5 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 
 ## Other Self-Taught Material
-### CodeCademy - Learn Java - Arrays and ArrayLists (5 out of 11)
+### CodeCademy - Learn Java - Completed
 ### Udemy - The Web Developer Bootcamp 2021 - YelpCamp
