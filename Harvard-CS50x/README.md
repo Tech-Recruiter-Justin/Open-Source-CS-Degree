@@ -398,3 +398,95 @@ int main(void)
 ### Hexadecimal
 
 - `0x` doesn't mean anything mathematically, but simply to say this is hexadecimal
+- 16 digits: 0-9, and A-F as equivalents to 10-15
+- 255 values from 00 to FF
+
+### Addresses
+
+- `&` operator refers to the address on the memory
+- `*` operator asks the programme to go to the address
+
+### Pointers
+
+```c
+int main(void)
+{
+   int n = 50;
+   int *p = &n;
+   printf("%p\n", p); // prints the address of n
+}
+```
+
+- Pointers take up 8 bytes
+
+### Strings
+
+- String variable is just a pointer to the first character of the string
+- Characters in strings are always stored in connected memory
+- `String s` is the same as `char *s`
+
+### Pointer Arithemetic
+
+- `Pointer arithmetic` is mathematical operations on addresses with pointers
+
+```c
+int main(void)
+{
+    char *s = "HI!";
+    printf("%c\n", *s); // 0x111
+    printf("%c\n", *(s+1)); // 0x112
+    printf("%c\n", *(s+2)); // 0x113
+}
+```
+
+### Valgrind
+
+- `valgrind` is a command-line tool that we can use to run our program and see if it has any **memory leaks**, or memory we’ve allocated without freeing, which might eventually cause out computer to run out of memory.
+
+```c
+int main(void)
+{
+    char *s = malloc(4); // allocates 4 bytes
+    s[0] = 'H';
+    s[1] = 'I';
+    s[2] = '!';
+    s[3] = '\0';
+    printf("%s\n", s);
+    free(s); // frees up the allocated memory
+}
+```
+
+### Garbage Values
+
+- `Garbage values` are unknown values that was in the memory from whatever program that was running in the computer before
+
+### Memory Layout
+
+- `Machine code` is the compiled program’s binary code
+- `Global variables` are the variables that we declared in our program
+- `Heap` is an empty area where `malloc` can get free memory for our program to use from the top down
+- `Stack` is used by functions in our program as they are called, and grows upwards
+- `Heap overflow/ stack overflow` may happen when we malloc too much memory and if we call too many functions
+
+### Files
+
+- `fopen` returns a pointer to a FILE, which can be read and written
+
+```c
+int main(void)
+{
+    FILE *file = fopen("phonebook.csv", "a");
+    if (file == NULL)
+    {
+        return 1;
+    }
+
+    char *name = get_string("Name: ");
+    char *number = get_string("Number: ");
+
+    fprintf(file, "%s,%s\n", name, number);
+
+    fclose(file);
+}
+```
+
