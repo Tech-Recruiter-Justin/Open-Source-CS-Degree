@@ -236,7 +236,7 @@ int main(void)
 
 - Strings are actually just arrays of characters
 
-![grid with H labeled s[0], I labeled s[1], ! labeled s[2], \0 labeled s[3], each of which takes up one box, and many empty boxes following](memory_with_string.png)
+<img src="memory_with_string.png" alt="grid with H labeled s[0], I labeled s[1], ! labeled s[2], \0 labeled s[3], each of which takes up one box, and many empty boxes following" style="zoom:80%;" />
 
 ### Command-line Arguments
 
@@ -272,7 +272,7 @@ Else if 50 > middle item
 
 ### Big O
 
-![chart with: "size of problem" as x–axis; "time to solve" as y–axis; red, steep straight line from origin to top of graph labeled "n"; yellow, less steep straight line from origin to top of graph labeled "n/2"; green, curved line that gets less and less steep from origin to right of graph labeled "log_2 n"](running_time.png)
+<img src="running_time.png" alt="chart with: &quot;size of problem&quot; as x–axis; &quot;time to solve&quot; as y–axis; red, steep straight line from origin to top of graph labeled &quot;n&quot;; yellow, less steep straight line from origin to top of graph labeled &quot;n/2&quot;; green, curved line that gets less and less steep from origin to right of graph labeled &quot;log_2 n&quot;" style="zoom:50%;" />
 
 - To describe run time:
 	- Big O - worst case scenarios 
@@ -490,3 +490,118 @@ int main(void)
 }
 ```
 
+
+
+## Week 5 - Data Structures
+
+- `struct` to create custom data types
+- `.` to access properties in a structure
+- `*` to go to an address in memory pointed to by a pointer
+- `->` to access properties in a structure pointed to by a pointer
+
+### Linked Lists
+
+- Data can be scattered around the memory but extra space is used to store a pointer to the next list
+
+```c
+// define a node
+typedef struct node
+{
+    int number;
+    struct node *next;
+}
+node;
+
+int main(void)
+{
+		// create node pointer towards NULL
+    node *list = NULL;
+    // create first node
+    node *n = malloc(size(node));
+    if (n != NULL)
+    {
+      	n -> number =1; // same as (*n).number = 1;
+      	n -> next = NULL;
+    }
+    // link list to first node
+    list = n;
+    // create the second node
+    n = malloc(sizeof(node));
+    if (n != NULL)
+    {
+        n->number = 2;
+        n->next = NULL;
+    }
+    // link the second node
+    list->next = n;
+    // create and link the third node
+    n = malloc(sizeof(node));
+    if (n != NULL)
+    {
+        n->number = 3;
+        n->next = NULL;
+    }
+    list->next->next = n;
+  
+  	// printing the whole list
+  	for (node *tmp = list; tmp != NULL; tmp = tmp->next)
+    {
+      	printf("%i\n", tmp->number);
+    }
+}
+```
+
+### Trees
+
+<img src="tree.png" alt="tree" style="zoom:50%;" />
+
+- Advantage: constant search time
+- Disadvantage: insertion is now O(log n), and it takes more memory to store the two pointers
+	- This is because the height of a binary tree is log n when it is balanced
+
+```c
+// define a node with two pointers
+typedef struct node
+{
+    int number;
+    struct node *left;
+    struct node *right;
+}
+node;
+
+bool search(node *tree, int number)
+{
+    if (tree == NULL)
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+    else if (number == tree->number)
+    {
+        return true;
+    }
+}
+```
+
+### Hash Table
+
+<img src="hash_table.png" alt="vertical array with 26 boxes, the first with an arrow pointing to a box labeled Albus, the second empty, the third with an arrow pointing to a box labeled Cedric ... the eighth with an arrow pointing to a box labeled Hermione with an arrow from that box pointing to a box labeled Harry with an arrow to a box labeled Hagrid ..." style="zoom: 50%;" />
+
+- A `hash table` uses a `hash function` to decide how we map the data
+- However, a larger hash table can quickly get a lot of empty buckets
+- It has an O(n) searching time in theory, but in real-world running time it's faster
+
+### Trie
+
+<img src="trie.png" alt="array with letters from A-Z in 26 elements, with H pointing to another array with all 26 letters. this array's A and E each point to two more arrays of all 26 letters, and this continues in a tree until the bottom-most arrays have only one letter marked as valid" style="zoom:67%;" />
+
+- A `trie` is a tree of arrays
+- Advantage: O(1) for searhing and inserting
+- Disadvantage: uses a lot of memory as the tree grows larger
