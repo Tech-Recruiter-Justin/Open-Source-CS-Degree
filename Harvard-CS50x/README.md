@@ -605,3 +605,44 @@ bool search(node *tree, int number)
 - A `trie` is a tree of arrays
 - Advantage: O(1) for searhing and inserting
 - Disadvantage: uses a lot of memory as the tree grows larger
+
+
+
+## Week 6 - Python
+
+### Syntaxes
+
+```python
+# printing text
+print("hello, world")
+# print with string template
+print(f"hello, {answer}")
+# get string
+answer = get_string("What's your name? ")
+# import function
+from cs50 import get_string
+import cs50
+# counters
+counter = counter + 1
+counter += 1
+# conditionals
+if x < y:
+  	print("something")
+elif x > y:
+  	print("another thing")
+else:
+  	print("something else")
+# while loop (boolean in caps)
+while True:
+  	print("hello world")
+# for loop
+for i in [0, 1, 2]:
+  	print("something")
+# for loop without listing all items
+for i in range(3):
+  	print("something")
+```
+
+- Python is `loosely typed` as the type is implied by the values
+- Example of types:
+	- bool, bloat, int, str, range, list, tuple, dict, set
