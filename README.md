@@ -9,7 +9,9 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ## Computer Science Basics
 
-### Harvard - CS50x - Week 5 out of 12
+### Harvard - CS50x - Week 6 out of 12
+
+
 
 ### UC San Diego - Mathematical Thinking in Computer Science - Yet to Start...
 
@@ -22,5 +24,5 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 
 ## Other Self-Taught Material
-### CodeCademy - Learn Java - Completed
+### CodeCademy - Learn Java - Completed 🏆
 ### Udemy - The Web Developer Bootcamp 2021 - YelpCamp
