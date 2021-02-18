@@ -641,8 +641,87 @@ for i in [0, 1, 2]:
 # for loop without listing all items
 for i in range(3):
   	print("something")
+# get user input
+answer = input("What is your name")
+print(f"hello, {answer}")
+# casting
+x = int(input("x: "))
+# convenience conditions
+if s.lower() in ["y", "yes"]
+# automatic concatnation using *
+print("?" * 4) # ????
+# command line arguement functions
+from sys import argv
+
+if len(argv) == 2:
+  	print(f"hello, {argv[1]}")
+else:
+  	print("hello, world")
+# exit status
+sys.exit(1)
+# dictionaries
+people = {
+  "Justin": "9453 1234",
+  "Stephanie": "6784 5433"
+}
+name = input("Whose number would you want to know?")
+print(people[name])
+# swapping
+x, y = y, x
 ```
 
 - Python is `loosely typed` as the type is implied by the values
 - Example of types:
 	- bool, bloat, int, str, range, list, tuple, dict, set
+
+### Pset 5 in Python
+
+```python
+def check(word):
+  	if word.lower() in words:
+      	return True
+    else:
+      	return False
+
+def load(dictionary):
+  	file = open(dictionary, "r")
+    for line in file:
+      	words.add(line.rstrip) #rstrip removes all empty spaces in the end of line
+    file.close()
+    return True
+
+def size():
+  	return len(words)
+```
+
+### Performance
+
+- Python: source code -> interpreter
+- C: source code -> compiler -> machine code
+- Pros
+	- It's much easier and faster to write in Python
+	- No compiling needed, instant feedback from code
+- Cons
+	- Runtime is slower
+	- More memory is needed
+	- We cannot control as much under the hood
+
+### Range
+
+```python
+# class range(start, stop[, step])
+for i in range(0, 101, 2):
+		print(i)
+```
+
+### CSV Manipulation
+
+```python
+import csv
+with open("phonebook.csv","a") as file:
+    name = input("Name")
+    number = input("Number")
+    writer = csv.writer(file)
+    writer.writerow([name, number])
+```
+
