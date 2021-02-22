@@ -725,3 +725,99 @@ with open("phonebook.csv","a") as file:
     writer.writerow([name, number])
 ```
 
+
+
+## Week 7 - SQL
+
+### Data Processing
+
+- Pros of CSV:
+	- Easy for sorting
+- Cons of CSV:
+	- Might run out of rows
+	- Not efficient for scaling
+- CSVs are flat-file database, where data for each column is separated by commas
+
+### Data Cleansing
+
+1. Casing - upper() or lower()
+2. White space - strip()
+3. Sorting - sorted(titles, key=lambda title: titles[title], reverse=True)
+4. Typo and punctuations - we must use a series of if else statements
+
+### Lambda
+
+- A **lambda**, or anonymous function, which has no name but takes in some argument or arguments, and returns a value immediately.
+
+### Relational Databases
+
+- `SQL (Structered Query Language)` is a prgramming language we use to interact with relational databases
+
+### sqlite3
+
+#### Loading
+
+1. Simply import flat-file database and SQLite will figure out for us
+2. Create a table and import the data using SQL
+
+```sqlite
+-- method 1
+.mode csv
+.import 'file name.csv' tablename
+.schema
+-- method 2
+
+```
+
+#### CRUD
+
+- create/ insert, select, update, delete
+
+- Conventionally, uppercase all the SQL syntax and lower case for table names
+
+```sqlite
+SELECT Title, title FROM shows; -- table names and properties are case sensitive
+SELECT * FROM shows; -- shows the whole table
+SELECT DISTINCT(UPPER(title)) FROM shows; -- removes duplicates, with title uppercase
+SELECT UPPER(TRIM(title)), COUNT(title) FROM shows GROUP BY UPPER(TRIM(title)) ORDER BY COUNT(title) DESC LIMIT 10; -- final form
+.save shows.db -- saves to a db file
+```
+
+#### Functions
+
+- `AVG`
+- `COUNT`
+- `DISTINCT`, for getting distinct values without duplicates
+- `LOWER`
+- `MAX`
+- `MIN`
+- `UPPER`
+
+#### Clauses
+
+- `WHERE`, matching results on a strict condition
+- `LIKE`, matching results on a less strict condition
+- `ORDER BY`, ordering results in some way
+- `LIMIT`, limiting the number of results
+- `GROUP BY`, grouping results in some way
+
+### Tables
+
+- We should try to avoid data stored in SQL using commas as it may defeat the purpose
+
+- `Primary key` is the column that uniquely identifies each row
+- We can then use a `foreign key` to refer back to the primary key
+
+### Data Types
+
+- `BLOB`, for “binary large object”, raw binary data that might represent files
+- `INTEGER`
+- `NUMERIC`, number-like but not quite a number, like a date or time
+- `REAL`, for floating-point values
+- `TEXT`, like strings
+
+### Additional Attributes
+
+- `NOT NULL`, which specifies that there must be some value
+- `UNIQUE`, which means that the value for that column must be unique for every row in the table
+
