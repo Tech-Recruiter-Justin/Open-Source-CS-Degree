@@ -7,9 +7,9 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ## Computer Science Basics
 
-### Harvard - CS50x - Week 7 out of 12
+### Harvard - CS50x - Week 8 out of 12
 
-🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥🟥🟥
+🟩🟩🟩🟩🟩🟩🟩🟩🟥🟥🟥🟥
 
 
 
@@ -17,7 +17,7 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ### Duke - Java Programming: Solving Problems with Software - Week 1 out of 4
 
-🟩🟩🟥🟥
+🟩🟥🟥🟥
 
 
 

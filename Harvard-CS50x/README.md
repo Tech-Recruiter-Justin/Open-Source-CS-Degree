@@ -821,3 +821,7 @@ SELECT UPPER(TRIM(title)), COUNT(title) FROM shows GROUP BY UPPER(TRIM(title)) O
 - `NOT NULL`, which specifies that there must be some value
 - `UNIQUE`, which means that the value for that column must be unique for every row in the table
 
+
+
+## Week 8 - HTML, CSS, JavaScript
+
