@@ -825,3 +825,40 @@ SELECT UPPER(TRIM(title)), COUNT(title) FROM shows GROUP BY UPPER(TRIM(title)) O
 
 ## Week 8 - HTML, CSS, JavaScript
 
+### The Internet
+
+- What is the internet? Network of networks of networks...
+- `Protocols` were designed when the internet was first created
+	- TCP
+	- IP (internet protocol)
+- Computers sends `packets` of data at the end of the day to transfer information
+- `IP addresses` are unique address of a computer/ a server
+- `DNS(domain name system)` translates a human-readable address to its corresponding IP address
+- `ISP (internet service provider)` is the company that provides internet infrastructure and connections
+- `TCP (transmission control protocol)` allows a single server to provide multiple services through the use of `port numbers`
+	- 80: HTTP (hyper text transfer protocol)
+	- 443: HTTPS (secured version - encrypted)
+	- and many other unique ports used by different services
+	- If any packets are lost during the transmission, TCP also handles retransmitting the packets
+- Each packet may take different paths to reach its destination - this is a feature to tackle network congestion
+- `Net neutrality` refers to the idea that these public routers treat packets equally, as opposed to allowing packets from certain companies or of certain types to be prioritized
+- Packets are usually broken down for better transmission and TCP would label each packet's order
+
+### Web Development
+
+- `GET` and `POST` are the two commands supported by HTTP
+
+```
+GET / HTTP/1.1
+Host: www.example.com/index.html
+...
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+...
+```
+
+
+
+## Week 9 - Flask
+
