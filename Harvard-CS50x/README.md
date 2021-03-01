@@ -862,3 +862,24 @@ Content-Type: text/html
 
 ## Week 9 - Flask
 
+### MVC Design Pattern
+
+- Flask (one of the many web server frameworks) uses the MVC (model-view controller) design pattern
+
+<img src="mvc.png" alt="Model with arrow to View labeled Updates; View with arrow to User labeled Sees; User with arrow to Controlled labeled Uses; Controller with arrow to Model labeled Manipulates" style="zoom:50%;" />
+
+- Controller = logic and code that manages our application overall, given user input (Python code)
+
+- The view is the user interface, like the HTML and CSS that the user will see and interact with.
+- The model is our application’s data, such as a SQL database or CSV file.
+
+### Sessions
+
+- Servers send a header in their responses called `Set-Cookie`
+
+```
+GET / HTTP/1.1
+Host: gmail.com
+Cookie: session=value
+```
+
