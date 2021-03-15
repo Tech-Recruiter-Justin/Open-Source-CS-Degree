@@ -7,9 +7,7 @@ This is a curated list of free courses from reputable universities like MIT, Sta
 
 ## Computer Science Basics
 
-### Harvard - CS50x - Week 11 out of 12
-
-🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟥
+### Harvard - CS50x - Completed 🏆
 
 
 
